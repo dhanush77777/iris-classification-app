@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="styes.css">
+  <style>
+    body{
+  background-image:url('https://wallpapercave.com/wp/Hg57hlS.jpg');">
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+    } 
+    
+    div{
+      text-align:center;
+      padding:8px; 
+      
+    }
+    footer{
+      padding:25px
+    }
+    h1{
+      color:red
+      
+    }
+    h3{
+      color:red;
+      padding:200px
+    }
+    button{
+      background-color:yellow
+    }
+    input{
+      background-color:lightgreen
+    }
+      
+    
+  </style>
+</head>
+
+<body>
+  
+ <div class="login">
+   <h1>Predict the species of iris</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    
+    	<form action="{{url_for('predict')}}"method="post">
+          <div>
+<input type="text" name="sepall" placeholder="sepal length" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="sepalw" placeholder="sepal width" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="petall" placeholder="petal length" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="petalw" placeholder="petal width" required="required" /><br>
+          </div>
+<footer>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+          </footer>
+  </form>
+
+   <br>
+   <br>
+   <h3>
+   {{ prediction_text }}
+   </h3>
+
+
+</body>
+</html>
